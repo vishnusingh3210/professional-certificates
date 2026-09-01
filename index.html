@@ -1,1 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Professional Certifications | AI Infrastructure</title>
+
+  <meta name="description" content="Professional certification portfolio focused on NVIDIA GPU, Supermicro, AI infrastructure, data centers, Linux, HPC, cloud and networking.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: #e8eef7;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(118, 185, 0, 0.12), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(0, 153, 255, 0.10), transparent 30%),
+        #070b12;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ---------- NAVBAR ---------- */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(15px);
+      background: rgba(7, 11, 18, 0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 800;
+      color: #76b900;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+      color: #aab7c8;
+    }
+
+    .nav-links a:hover {
+      color: #76b900;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      min-height: 92vh;
+      max-width: 1150px;
+      margin: auto;
+      padding: 110px 25px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .badge {
+      display: inline-block;
+      width: fit-content;
+      padding: 7px 14px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(118,185,0,0.35);
+      border-radius: 50px;
+      color: #76b900;
+      background: rgba(118,185,0,0.08);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      max-width: 900px;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: #76b900;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 2vw, 21px);
+      color: #9eacbd;
+      margin-bottom: 25px;
+      max-width: 850px;
+    }
+
+    .hero-description {
+      max-width: 800px;
+      color: #c3ccd8;
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #76b900;
+      color: #061000;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(118,185,0,0.25);
+    }
+
+    .btn-secondary {
+      border: 1px solid #293444;
+      color: #d8e1ec;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover {
+      border-color: #76b900;
+      color: #76b900;
+    }
+
+    /* ---------- GENERAL ---------- */
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 80px 25px;
+    }
+
+    .section-title {
+      margin-bottom: 40px;
+    }
+
+    .section-title .small {
+      color: #76b900;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: #8795a8;
+      max-width: 700px;
+      margin-top: 10px;
+    }
+
+    /* ---------- CERTIFICATION GRID ---------- */
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .cert-card {
+      position: relative;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #202b3a;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.045),
+        rgba(255,255,255,0.015)
+      );
+      transition: 0.35s;
+      overflow: hidden;
+    }
+
+    .cert-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: #76b900;
+      opacity: 0.6;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(118,185,0,0.5);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    .cert-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .cert-card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .cert-card p {
+      color: #8997a9;
+      font-size: 14px;
+    }
+
+    .level {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background: rgba(118,185,0,0.1);
+      color: #8ed600;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .view-cert {
+      display: inline-block;
+      margin-top: 16px;
+      color: #76b900;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .view-cert:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- INFRASTRUCTURE ---------- */
+
+    .infra-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .infra-card {
+      padding: 22px 15px;
+      text-align: center;
+      border: 1px solid #202b3a;
+      background: rgba(255,255,255,0.025);
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .infra-card:hover {
+      transform: translateY(-4px);
+      border-color: #76b900;
+    }
+
+    .infra-card .icon {
+      font-size: 28px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .infra-card span {
+      color: #b8c3d1;
+      font-size: 13px;
+    }
+
+    /* ---------- TECHNICAL FOCUS ---------- */
+
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid #202b3a;
+    }
+
+    .tech-table th,
+    .tech-table td {
+      padding: 17px 20px;
+      text-align: left;
+      border-bottom: 1px solid #202b3a;
+    }
+
+    .tech-table th {
+      background: rgba(118,185,0,0.08);
+      color: #76b900;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .tech-table td:first-child {
+      color: #eaf0f7;
+      font-weight: 700;
+      width: 25%;
+    }
+
+    .tech-table td:last-child {
+      color: #929fb0;
+    }
+
+    /* ---------- SPECIALIZATION ---------- */
+
+    .specialization {
+      padding: 45px;
+      border-radius: 18px;
+      border: 1px solid rgba(118,185,0,0.25);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(118,185,0,0.10),
+          rgba(0,0,0,0.05)
+        );
+    }
+
+    .specialization h2 {
+      color: #76b900;
+      margin-bottom: 12px;
+    }
+
+    .specialization p {
+      color: #b7c2d0;
+      max-width: 850px;
+    }
+
+    /* ---------- CURRENT FOCUS ---------- */
+
+    .focus-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 30px 10px;
+    }
+
+    .focus-item {
+      padding: 12px 17px;
+      border: 1px solid #273343;
+      border-radius: 8px;
+      background: #0d131c;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .arrow {
+      color: #76b900;
+      font-weight: bold;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      margin-top: 40px;
+      padding: 50px 25px;
+      text-align: center;
+      border-top: 1px solid #202b3a;
+      background: #05080d;
+    }
+
+    footer h3 {
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #748194;
+      font-size: 14px;
+    }
+
+    .linkedin {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 18px;
+      border: 1px solid #293444;
+      border-radius: 7px;
+      color: #d9e4ef;
+    }
+
+    .linkedin:hover {
+      border-color: #76b900;
+      color: #76b900;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 850px) {
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .infra-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 80px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .infra-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tech-table {
+        font-size: 13px;
+      }
+
+      .tech-table th,
+      .tech-table td {
+        padding: 12px;
+      }
+
+      .specialization {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">⚡ AI INFRASTRUCTURE</div>
+
+      <div class="nav-links">
+        <a href="#certifications">Certifications</a>
+        <a href="#infrastructure">Infrastructure</a>
+        <a href="#skills">Skills</a>
+        <a href="#focus">Focus</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+
+    <div class="badge">
+      🏆 PROFESSIONAL CERTIFICATION PORTFOLIO
+    </div>
+
+    <h1>
+      Professional Certifications
+      <span>& AI Infrastructure</span>
+    </h1>
+
+    <div class="hero-subtitle">
+      🖥️ Data Center • NVIDIA GPU • Supermicro • Linux • AI/ML • Cloud
+    </div>
+
+    <p class="hero-description">
+      A collection of technical certifications and training focused on
+      AI infrastructure, GPU servers, data-center technologies,
+      high-performance computing, and enterprise systems.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#certifications" class="btn btn-primary">
+        Explore Certifications →
+      </a>
+
+      <a href="#skills" class="btn btn-secondary">
+        Technical Skills
+      </a>
+    </div>
+
+  </header>
+
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+
+    <div class="section-title">
+      <div class="small">🏆 Core Certifications</div>
+      <h2>NVIDIA GPU & AI Infrastructure</h2>
+      <p>
+        Specialized certification and training across modern GPU
+        and AI data-center platforms.
+      </p>
+    </div>
+
+    <div class="cert-grid">
+
+      <div class="cert-card">
+        <div class="cert-icon">🟢</div>
+        <h3>A100 HGX</h3>
+        <p>NVIDIA HGX A100 8-GPU platform</p>
+        <span class="level">Associate • Specialist</span>
+
+        <a class="view-cert"
+           href="certificates/A100-GPU-Associate.pdf"
+           target="_blank">
+          📄 View Certificate →
+        </a>
+      </div>
+
+
+      <div class="cert-card">
+        <div class="cert-icon">🟢</div>
+        <h3>H100 HGX</h3>
+        <p>NVIDIA HGX H100 8-GPU platform</p>
+        <span class="level">Associate • Specialist • Expert</span>
+
+        <a class="view-cert"
+           href="certificates/H100-GPU-Associate.pdf"
+           target="_blank">
+          📄 View Certificate →
+        </a>
+      </div>
+
+
+      <div class="cert-card">
+        <div class="cert-icon">🟢</div>
+        <h3>H100 / H200</h3>
+        <p>GPU service and infrastructure</p>
+        <span class="level">Associate • Specialist Plus</span>
+
+        <a class="view-cert"
+           href="certificates/H100-H200.pdf"
+           target="_blank">
+          📄 View Certificate →
+        </a>
+      </div>
+
+
+      <div class="cert-card">
+        <div class="cert-icon">💧</div>
+        <h3>B200 4U Liquid Cooled</h3>
+        <p>Liquid-cooled NVIDIA B200 infrastructure</p>
+        <span class="level">Associate • Specialist</span>
+
+        <a class="view-cert"
+           href="certificates/B200-4U-Liquid-Cooled.pdf"
+           target="_blank">
+          📄 View Certificate →
+        </a>
+      </div>
+
+
+      <div class="cert-card">
+        <div class="cert-icon">❄️</div>
+        <h3>B200 10U Air Cooled</h3>
+        <p>Air-cooled NVIDIA B200 infrastructure</p>
+        <span class="level">Associate • Specialist • Expert</span>
+
+        <a class="view-cert"
+           href="certificates/B200-10U-Air-Cooled.pdf"
+           target="_blank">
+          📄 View Certificate →
+        </a>
+      </div>
+
+
+      <div class="cert-card">
+        <div class="cert-icon">❄️</div>
+        <h3>B300 8U Air Cooled</h3>
+        <p>Air-cooled NVIDIA B300 infrastructure</p>
+        <span class="level">Associate • Specialist • Expert</span>
+
+        <a class="view-cert"
+           href="certificates/B300-8U-Air-Cooled.pdf"
+           target="_blank">
+          📄 View Certificate →
+        </a>
+      </div>
+
+
+      <div class="cert-card">
+        <div class="cert-icon">🚀</div>
+        <h3>GB200 / 300 NVL72</h3>
+        <p>Liquid-cooled NVL72 infrastructure</p>
+        <span class="level">Service Associate</span>
+
+        <a class="view-cert"
+           href="certificates/GB200-NVL72.pdf"
+           target="_blank">
+          📄 View Certificate →
+        </a>
+      </div>
+
+
+      <div class="cert-card">
+        <div class="cert-icon">🔧</div>
+        <h3>NVL72 Troubleshooting</h3>
+        <p>GB200/300 NVL72 liquid-cooled systems</p>
+        <span class="level">Training Completion</span>
+
+        <a class="view-cert"
+           href="certificates/GB200-NVL72-Troubleshooting.pdf"
+           target="_blank">
+          📄 View Certificate →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SUPERMICRO -->
+  <section id="infrastructure">
+
+    <div class="section-title">
+      <div class="small">🖥️ Infrastructure</div>
+      <h2>Supermicro Systems</h2>
+      <p>
+        Enterprise server and data-center infrastructure technologies.
+      </p>
+    </div>
+
+    <div class="infra-grid">
+
+      <div class="infra-card">
+        <span class="icon">⚡</span>
+        <span>High-Speed GPU Servers</span>
+      </div>
+
+      <div class="infra-card">
+        <span class="icon">🧠</span>
+        <span>AI / HPC Platforms</span>
+      </div>
+
+      <div class="infra-card">
+        <span class="icon">💧</span>
+        <span>Liquid Cooling</span>
+      </div>
+
+      <div class="infra-card">
+        <span class="icon">❄️</span>
+        <span>Air Cooling</span>
+      </div>
+
+      <div class="infra-card">
+        <span class="icon">🔧</span>
+        <span>Service & Troubleshooting</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- TECHNICAL SKILLS -->
+  <section id="skills">
+
+    <div class="section-title">
+      <div class="small">🛠️ Technical Focus</div>
+      <h2>Technology Stack</h2>
+    </div>
+
+    <table class="tech-table">
+
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Technologies / Skills</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>🟢 NVIDIA GPU</td>
+          <td>A100 • H100 • H200 • B200 • B300 • GB200/NVL72</td>
+        </tr>
+
+        <tr>
+          <td>🖥️ Server Hardware</td>
+          <td>Supermicro • GPU Servers • Blade • Hyper • Hyperscale</td>
+        </tr>
+
+        <tr>
+          <td>🤖 AI / HPC</td>
+          <td>Artificial Intelligence • Generative AI • Machine Learning • HPC</td>
+        </tr>
+
+        <tr>
+          <td>🐧 Systems</td>
+          <td>Linux • Server Administration • Troubleshooting</td>
+        </tr>
+
+        <tr>
+          <td>☁️ Cloud</td>
+          <td>AWS • Microsoft Azure</td>
+        </tr>
+
+        <tr>
+          <td>🌐 Networking</td>
+          <td>Data Center • Enterprise • Infrastructure</td>
+        </tr>
+
+        <tr>
+          <td>🔐 Security</td>
+          <td>Cybersecurity • Server Security • Network Security</td>
+        </tr>
+
+        <tr>
+          <td>📊 Data</td>
+          <td>Data Analysis • Analytics • Machine Learning</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </section>
+
+
+  <!-- SPECIALIZATION -->
+  <section>
+
+    <div class="specialization">
+
+      <h2>💡 Specialization</h2>
+
+      <h3>AI Data Center Infrastructure & GPU Computing</h3>
+
+      <br>
+
+      <p>
+        Focused on NVIDIA GPU platforms, Supermicro AI servers,
+        high-performance computing, liquid and air cooling,
+        Linux systems, and enterprise data-center infrastructure.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CURRENT FOCUS -->
+  <section id="focus">
+
+    <div class="section-title">
+      <div class="small">📚 Continuous Learning</div>
+      <h2>Current Focus</h2>
+
+      <p>
+        Continuously expanding technical knowledge through
+        certifications, hands-on training, and emerging
+        AI infrastructure technologies.
+      </p>
+    </div>
+
+
+    <div class="focus-flow">
+
+      <div class="focus-item">🎮 GPU Computing</div>
+      <span class="arrow">→</span>
+
+      <div class="focus-item">🤖 AI Infrastructure</div>
+      <span class="arrow">→</span>
+
+      <div class="focus-item">🏢 Data Centers</div>
+      <span class="arrow">→</span>
+
+      <div class="focus-item">🐧 Linux</div>
+      <span class="arrow">→</span>
+
+      <div class="focus-item">⚡ HPC</div>
+      <span class="arrow">→</span>
+
+      <div class="focus-item">☁️ Cloud</div>
+      <span class="arrow">→</span>
+
+      <div class="focus-item">🌐 Networking</div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <h3>🔗 Professional Profile</h3>
+
+    <p>
+      For professional experience, projects, education,
+      and career information.
+    </p>
+
+    <!-- Replace # with your LinkedIn URL -->
+    <a
+      class="linkedin"
+      href="#"
+      target="_blank"
+      rel="noopener">
+      💼 LinkedIn Profile →
+    </a>
+
+    <br><br>
+
+    <p>
+      ⭐ Building expertise in the infrastructure powering
+      the next generation of AI.
+    </p>
+
+    <br>
+
+    <p>
+      © 2026 Professional Certification Portfolio
+    </p>
+
+  </footer>
+
+</body>
+</html>
 
